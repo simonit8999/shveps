@@ -36,15 +36,13 @@ export default function Screen5Confirm({ config, data }: Props) {
       `Итого: ${fmt(total)}`,
     ].filter(Boolean).join('\n')
 
-    const url = `https://t.me/${config.telegram_username}?text=${encodeURIComponent(lines)}`
+    // Отправляем в WhatsApp (так как Telegram нет)
+    const url = `https://wa.me/79205000535?text=${encodeURIComponent(lines)}`
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
-    /* Главный контейнер: фиксируем высоту экрана */
-    <div className="flex flex-col h-full bg-ink overflow-hidden">
-      
-      {/* Шапка (не скроллится) */}
+    <div className="flex flex-col h-[100dvh] overflow-hidden bg-ink">
       <div className="pt-2 pb-5 px-5 shrink-0">
         <h1 className="font-display font-black text-[28px] leading-tight tracking-tight uppercase">
           Всё верно?
@@ -52,8 +50,7 @@ export default function Screen5Confirm({ config, data }: Props) {
         <p className="mt-1.5 text-zincsoft text-sm">Проверьте детали перед отправкой</p>
       </div>
 
-      {/* Скроллируемая карточка с данными */}
-      <div className="flex-1 overflow-y-auto px-5 pb-4">
+      <div className="flex-1 overflow-y-auto px-5 pb-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +79,6 @@ export default function Screen5Confirm({ config, data }: Props) {
         </motion.div>
       </div>
 
-      {/* Кнопка (всегда внизу, не скроллится) */}
       <div className="shrink-0 p-5 pb-safe bg-ink border-t border-white/5">
         <motion.button
           type="button"
@@ -91,10 +87,10 @@ export default function Screen5Confirm({ config, data }: Props) {
           className="w-full h-14 rounded-full bg-accent text-ink font-semibold text-[15px] flex items-center justify-center gap-2 shadow-glow active:shadow-glowlg transition-shadow"
         >
           <Send className="w-4 h-4" strokeWidth={2.4} />
-          Отправить заявку в Telegram
+          Отправить заявку в WhatsApp
         </motion.button>
         <p className="mt-3 text-center text-[11px] text-zincsoft leading-relaxed">
-          Нажимая кнопку, вы перейдёте в Telegram
+          Нажимая кнопку, вы перейдёте в WhatsApp
         </p>
       </div>
     </div>
