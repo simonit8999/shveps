@@ -36,13 +36,16 @@ export default function Screen5Confirm({ config, data }: Props) {
       `Итого: ${fmt(total)}`,
     ].filter(Boolean).join('\n')
 
-    // Отправляем в Telegram
+    // Отправка в Telegram
     const url = `https://t.me/${config.telegram_username}?text=${encodeURIComponent(lines)}`
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
-    <div className="flex flex-col h-[100dvh] overflow-hidden bg-ink">
+    /* Главный контейнер: фиксируем высоту экрана */
+    <div className="flex flex-col h-full bg-ink overflow-hidden">
+      
+      {/* Шапка (не скроллится) */}
       <div className="pt-2 pb-5 px-5 shrink-0">
         <h1 className="font-display font-black text-[28px] leading-tight tracking-tight uppercase">
           Всё верно?
@@ -50,7 +53,8 @@ export default function Screen5Confirm({ config, data }: Props) {
         <p className="mt-1.5 text-zincsoft text-sm">Проверьте детали перед отправкой</p>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-5 pb-6">
+      {/* Скроллируемая карточка с данными */}
+      <div className="flex-1 overflow-y-auto px-5 pb-4">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,6 +83,7 @@ export default function Screen5Confirm({ config, data }: Props) {
         </motion.div>
       </div>
 
+      {/* Кнопка (всегда внизу, не скроллится) */}
       <div className="shrink-0 p-5 pb-safe bg-ink border-t border-white/5">
         <motion.button
           type="button"
