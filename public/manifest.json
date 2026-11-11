@@ -10,13 +10,13 @@
   "theme_color": "#0a1f14",
   "icons": [
     {
-      "src": "./images/shveps/icon-192.png",
+      "src": "./shveps/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./images/shveps/icon-512.png",
+      "src": "./shveps/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
