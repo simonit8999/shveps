@@ -14,5 +14,5 @@
     { "id": "3", "name": "Химчистка салона", "price": 8000, "duration": "5 часов", "image": "/shveps/srv3.jpg" },
     { "id": "4", "name": "Полировка фар", "price": 3000, "duration": "2 часа", "image": "/shveps/srv4.jpg" }
   ],
-  "working_hours": { "start": "10:00", "end": "21:00", "slot_minutes": 120 }
+  "working_hours": { "start": "10:00", "end": "21:00", "slot_minutes": 60 }
 }
