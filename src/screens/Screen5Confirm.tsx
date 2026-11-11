@@ -36,8 +36,8 @@ export default function Screen5Confirm({ config, data }: Props) {
       `Итого: ${fmt(total)}`,
     ].filter(Boolean).join('\n')
 
-    // Отправляем в WhatsApp (так как Telegram нет)
-    const url = `https://wa.me/79205000535?text=${encodeURIComponent(lines)}`
+    // Отправляем в Telegram
+    const url = `https://t.me/${config.telegram_username}?text=${encodeURIComponent(lines)}`
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
@@ -87,10 +87,10 @@ export default function Screen5Confirm({ config, data }: Props) {
           className="w-full h-14 rounded-full bg-accent text-ink font-semibold text-[15px] flex items-center justify-center gap-2 shadow-glow active:shadow-glowlg transition-shadow"
         >
           <Send className="w-4 h-4" strokeWidth={2.4} />
-          Отправить заявку в WhatsApp
+          Отправить заявку в Telegram
         </motion.button>
         <p className="mt-3 text-center text-[11px] text-zincsoft leading-relaxed">
-          Нажимая кнопку, вы перейдёте в WhatsApp
+          Нажимая кнопку, вы перейдёте в Telegram
         </p>
       </div>
     </div>
