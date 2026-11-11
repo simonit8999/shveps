@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#050505',
+        ink: '#0a1f14',
         surface: '#121212',
         zincsoft: '#A1A1AA',
         accent: 'rgb(var(--accent) / <alpha-value>)',
