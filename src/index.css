@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --accent: 229 229 229; /* Белый акцент */
-  --ink: #0a1f14; /* Темно-зеленый фон */
+  --accent: 255 255 255; /* Белый акцент */
+  --ink: #0a1f14; /* Темно-зеленый фон (изумрудный) */
   color-scheme: dark;
 }
 
@@ -27,7 +27,7 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-::selection { background: rgb(var(--accent)); color: #fff; }
+::selection { background: rgb(var(--accent)); color: #0a1f14; }
 
 input:-webkit-autofill,
 textarea:-webkit-autofill {
